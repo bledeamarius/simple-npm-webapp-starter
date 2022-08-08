@@ -30,7 +30,7 @@
     "build:img": "shx cp app/img/* dist/img",
     "build:html": "shx cp app/*.html dist",
     "build": "npm run clean && run-p build:css build:js build:img build:html",
-    "serve": "browser-sync start -s dist -f dist -b chrome --port ${env.PORT_TO_EXPOSE} --no-notify",
+    "serve": "browser-sync start -s dist -f dist -b chrome --port PORT_TO_EXPOSE --no-notify",
     "watch:css": "onchange app/css -- npm run build:css",
     "watch:js": "onchange app/js -- npm run build:js",
     "watch:img": "onchange app/img -- npm run build:img",
