@@ -13,7 +13,7 @@ pipeline {
 
             steps{
                 echo "~~~ Deploying docker image version $DOCKER_IMAGE_VERSION ~~~"
-                sh "docker run -d $DOCKER_REGISTRY/$IMAGE_NAME:${DOCKER_IMAGE_VERSION}"
+                sh "docker run -d -p 4000:4000  $DOCKER_REGISTRY/$IMAGE_NAME:${DOCKER_IMAGE_VERSION}"
             }
         }
 
