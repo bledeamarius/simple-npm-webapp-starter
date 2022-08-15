@@ -1,0 +1,22 @@
+
+
+pipeline {
+    agent any
+    environment {
+        DOCKER_REGISTRY = 'maryusmm'
+        IMAGE_NAME      = 'simple-npm-webapp'
+    }
+
+    stages {
+
+        stage('Deploy Container') {            
+
+            steps{
+                echo "~~~ Deploying docker image version $DOCKER_IMAGE_VERSION ~~~"
+                sh "docker run -d $DOCKER_REGISTRY/$IMAGE_NAME:${DOCKER_IMAGE_VERSION}"
+            }
+        }
+
+
+    }
+}
