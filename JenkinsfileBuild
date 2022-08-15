@@ -10,9 +10,9 @@ pipeline {
     stages {
         stage('Build docker image') { 
             steps {
-                sh "echo "~~~ Replace port to expose with ${PORT_TO_EXPOSE}~~~" 
+                echo "~~~ Replace port to expose with ${PORT_TO_EXPOSE}~~~" 
                 sh "sed -i "s/PORT_TO_EXPOSE/${PORT_TO_EXPOSE}/g" package.json"
-                
+
                 sh "docker build --build-arg PORT_TO_EXPOSE=${PORT_TO_EXPOSE} -t $DOCKER_REGISTRY/$IMAGE_NAME:$BUILD_NUMBER ." 
             }
         }
