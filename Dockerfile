@@ -10,7 +10,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the app
-COPY . .
+COPY app dist node_modules ./
 
 # ARG PORT_TO_EXPOSE=8081
 
