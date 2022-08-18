@@ -1,1 +1,5 @@
 *.tar.gz
+*.md
+Jenkins*
+*.npmrc
+*.gitignore
